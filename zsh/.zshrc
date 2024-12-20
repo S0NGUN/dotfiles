@@ -133,7 +133,7 @@ alias ws="cd ~/workspace && ls"
 alias plugins="cd ~/.oh-my-zsh/custom/plugins"
 alias lc="cd ~/workspace/LeetCode/"
 alias dl="cd ~/Downloads && lss"
-alias cd="z"
+# alias cd="z" # CAUSES MAJOR WEIRD PROBLEMS!!!!
 alias vim="nvim"
 
 
