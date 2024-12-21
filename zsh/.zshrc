@@ -95,6 +95,7 @@ plugins=(
   forgit
   zsh-autosuggestions
   zsh-syntax-highlighting
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -185,6 +186,8 @@ function my_ls() {
 }
 alias lss=my_ls
 
+# enable vi mode on ESC key press
+# bindkey -v
 
 # BINDKEY Control + Space to autosuggest-accept
 bindkey '^ ' autosuggest-accept
@@ -196,7 +199,14 @@ bindkey '^ ' autosuggest-accept
 # eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_custom.yaml)"
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin.omp.json)"
-#
+
+# See: https://github.com/starship/starship/issues/3418
+if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
+      "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
+    zle -N zle-keymap-select "";
+fi
+
 eval "$(starship init zsh)"
+
 
 
