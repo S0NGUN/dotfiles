@@ -153,7 +153,7 @@ format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"
+time_format = "%T"
 style = "bg:color_pink"
 format = '[[  $time ](fg:color_bg1 bg:color_pink)]($style)'
 
