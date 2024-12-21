@@ -11,6 +11,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- probably want to move this to into mappings.lua or something
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "yaml",
   callback = function()
