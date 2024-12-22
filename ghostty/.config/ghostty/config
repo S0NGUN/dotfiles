@@ -1,0 +1,12 @@
+# theme = catppuccin-mocha
+theme = MaterialOcean
+
+macos-titlebar-style = tabs
+
+font-family = MesloLGS NF
+
+gtk-tabs-location = bottom
+
+
+
+

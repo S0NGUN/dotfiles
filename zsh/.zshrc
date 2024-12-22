@@ -115,6 +115,12 @@ alias dl="cd ~/Downloads && lss"
 # alias cd="z" # CAUSES MAJOR WEIRD PROBLEMS!!!!
 alias vim="nvim"
 
+### shorthand for editing configs
+alias zshrc="nvim ~/.zshrc"
+alias tmuxc="nvim ~/.tmux.conf" 
+alias kittyc="nvim ~/.config/kitty/kitty.conf"
+
+
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -156,6 +162,16 @@ movetosamples() {
     fi
 
     mv "$1" "$SAMPLES" && echo "Successfully moved '$1' to '$SAMPLES'" || echo "Failed to move '$1' to '$SAMPLES'"
+}
+
+# Yazi y shell wrapper https://yazi-rs.github.io/docs/quick-start/#multi-tab
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # CUSTOM LS
