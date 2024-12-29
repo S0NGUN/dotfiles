@@ -6,6 +6,9 @@ export ZSH="$HOME/.oh-my-zsh"
 ### for gopls LSP
 export PATH=$PATH:$HOME/go/bin
 
+### Set default editor to nvim
+export EDITOR=nvim
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -125,6 +128,7 @@ alias kittyc="nvim ~/.config/kitty/kitty.conf"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="$PATH:~/Downloads/ltex-ls-plus-18.3.0/bin/"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -188,16 +192,23 @@ bindkey '^ ' autosuggest-accept
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Recommended to add as the last line https://ohmyposh.dev/docs/installation/prompt
 # eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_custom.yaml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/negligible_custom.yaml)"
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/1_shell.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/negligible.omp.json)"
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyo.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/emodipt-extend.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/onehalf.minimal.omp.json)"
+
 
 # See: https://github.com/starship/starship/issues/3418
-if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
-      "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
-    zle -N zle-keymap-select "";
-fi
+#if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
+#       "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
+#     zle -N zle-keymap-select "";
+# fi
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 
 
